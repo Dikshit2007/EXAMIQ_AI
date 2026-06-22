@@ -1,291 +1,161 @@
-# Development Log
+# ExamIQ AI - Development Log
 
-# Project Name
+## Project Title
 
-ExamIQ AI
+ExamIQ AI – AI-Powered Exam Preparation Assistant
 
-Predict. Practice. Perform.
+## Objective
 
----
-
-# Challenge
-
-AI Vibe Coding Challenge 2026
+To help students analyze study notes and previous year question papers (PYQs) using AI and generate predicted questions and mock tests based on exam patterns.
 
 ---
 
-# Problem Statement
+## Day 1 – Project Planning
 
-Students spend significant time manually reading notes and previous year question papers to identify important topics, repeated questions, and exam trends.
+### Tasks Completed
 
-The goal of ExamIQ AI is to automate this process using Artificial Intelligence and help students prepare more efficiently.
+* Finalized project idea.
+* Defined core features:
 
----
+  * Notes Analyzer
+  * PYQ Analyzer
+  * Mock Test Generator
+* Selected technology stack.
 
-# AI Coding Assistants Used
+### Decisions Taken
 
-- ChatGPT
-- Gemini
-- VS Code AI Assistance
-
----
-
-# AI Models Used
-
-- Gemini 2.5 Flash
-
-Purpose:
-
-- Notes Analysis
-- PYQ Analysis
-- Mock Test Generation
-- Topic Extraction
-- Pattern Recognition
+* Frontend: Streamlit
+* AI Model: Google Gemini 2.5 Flash
+* Language: Python
 
 ---
 
-# Technologies Used
+## Day 2 – Notes Analyzer Development
 
-## Frontend
+### Tasks Completed
 
-- Streamlit
+* Implemented PDF upload feature.
+* Added text extraction from PDF files.
+* Integrated Gemini AI.
+* Generated:
 
-## Backend
+  * Important topics
+  * Summaries
+  * Expected questions
 
-- Python
+### Challenges
 
-## AI
+* Handling large PDF files.
+* Managing Gemini response length.
 
-- Gemini 2.5 Flash
+### Solutions
 
-## OCR
-
-- Tesseract OCR
-
-## PDF Processing
-
-- PyPDF2
-
-## Environment Variables
-
-- Python Dotenv
+* Limited extracted text size before sending to AI.
 
 ---
 
-# Features Implemented
+## Day 3 – PYQ Analyzer Development
 
-## Notes Analyzer
+### Tasks Completed
 
-Users can upload study notes in PDF format.
+* Added multiple PYQ upload support.
+* Extracted content from question papers.
+* Implemented pattern analysis using Gemini.
 
-The AI generates:
+### Outputs Generated
 
-- Summary
-- Important Topics
-- Revision Notes
-- Predicted Questions
-- Key Concepts
+* Frequently asked topics
+* Important units
+* Repeated questions
+* Exam trends
 
----
+### Challenges
 
-## PYQ Analyzer
+* Some PDFs contained scanned images.
 
-Users can upload multiple previous year question papers.
+### Solutions
 
-The AI identifies:
-
-- Frequently Asked Topics
-- Exam Trends
-- Repeated Questions
-- Important Units
-- Pattern Insights
+* Added OCR support using Tesseract OCR.
 
 ---
 
-## Mock Test Generator
+## Day 4 – OCR Integration
 
-Users can upload previous year papers.
+### Tasks Completed
 
-The AI generates:
+* Installed Tesseract OCR.
+* Connected OCR with PDF processing.
+* Enabled analysis of scanned question papers.
 
-- New Mock Tests
-- Similar Question Styles
-- Similar Marks Distribution
-- Similar Difficulty Levels
+### Result
 
-based on historical question patterns.
-
----
-
-## OCR Support
-
-Integrated Tesseract OCR to support scanned PDFs and image-based documents.
-
-This enables extraction of text even when PDFs contain images instead of selectable text.
+* Both text-based and scanned PDFs became supported.
 
 ---
 
-# Important Prompts Used
+## Day 5 – Mock Test Generator
 
-## Notes Analysis Prompt
+### Tasks Completed
 
-Analyze the uploaded notes and provide:
+* Created Mock Test Generator module.
+* Generated mock tests based on:
 
-- Summary
-- Important Topics
-- Key Concepts
-- Predicted Questions
-- Revision Notes
+  * PYQ patterns
+  * Question frequency
+  * Mark distribution
+  * Difficulty level
 
-Format the response clearly using headings.
+### Features Added
 
----
-
-## PYQ Analysis Prompt
-
-Analyze the uploaded previous year question papers and identify:
-
-- Frequently Asked Topics
-- Repeated Questions
-- Important Units
-- Exam Trends
-- Question Patterns
-
-Provide a structured report.
+* 20 Marks Mock Test
+* 50 Marks Mock Test
+* 100 Marks Mock Test
 
 ---
 
-## Mock Test Generation Prompt
+## Day 6 – UI Improvement
 
-Based on the uploaded previous year question papers:
+### Tasks Completed
 
-Generate a new mock test paper.
+* Redesigned interface.
+* Simplified navigation.
+* Added tab-based workflow.
 
-Requirements:
+### Final UI Sections
 
-- Follow similar marks distribution
-- Follow similar question styles
-- Maintain comparable difficulty level
-- Cover important topics identified in analysis
-
----
-
-# AI Generated Code
-
-AI assisted in generating:
-
-- Streamlit Interface
-- Gemini API Integration
-- PDF Reading Functions
-- OCR Logic
-- Prompt Structures
-- Mock Test Generator Logic
-- Error Handling
+1. Notes Analyzer
+2. PYQ Analyzer
+3. Mock Test Generator
 
 ---
 
-# Manual Modifications
+## Testing
 
-The following changes were performed manually:
+### Test Cases Performed
 
-- UI Simplification
-- Layout Improvements
-- Tab Organization
-- Prompt Adjustments
-- OCR Configuration
-- API Key Management
-- Debugging Streamlit Errors
-- Testing Multiple PDFs
-- Improving Output Formatting
+* Notes PDF Upload
+* PYQ Upload
+* OCR Extraction
+* Gemini Response Generation
+* Mock Test Generation
 
----
+### Result
 
-# Challenges Faced
-
-## 1. Gemini API Configuration
-
-Initially encountered:
-
-- Invalid model errors
-- API key loading issues
-- Environment variable configuration problems
-
-Solution:
-
-- Verified available Gemini models
-- Updated model configuration
-- Fixed .env loading
+All major features functioning successfully.
 
 ---
 
-## 2. Scanned PDF Processing
+## Final Outcome
 
-Many question papers contained images instead of text.
+ExamIQ AI successfully:
 
-Problem:
+* Analyzes notes
+* Analyzes previous year question papers
+* Detects important topics
+* Predicts exam-oriented questions
+* Generates AI-based mock tests
+* Supports scanned and text PDFs
 
-PyPDF2 could not extract text.
+## Status
 
-Solution:
-
-Integrated Tesseract OCR to support image-based PDFs.
-
----
-
-## 3. Streamlit UI Errors
-
-Faced:
-
-- Indentation issues
-- Tab configuration errors
-- Layout problems
-
-Solution:
-
-Refactored UI structure and simplified layout.
-
----
-
-## 4. Prompt Optimization
-
-Early outputs were inconsistent.
-
-Solution:
-
-Improved prompts to enforce structured responses and exam-focused analysis.
-
----
-
-# Lessons Learned
-
-During this project I learned:
-
-- AI-assisted software development
-- Prompt engineering
-- Gemini API integration
-- OCR fundamentals
-- Streamlit application development
-- Debugging AI-powered systems
-- Managing environment variables
-- Building MVPs rapidly using AI tools
-
----
-
-# Future Improvements
-
-- User Authentication
-- Cloud Deployment
-- Download Reports as PDF
-- Performance Tracking
-- Subject-wise Analytics
-- Question Difficulty Analysis
-- Personalized Study Plans
-- Database Integration
-
----
-
-# Conclusion
-
-ExamIQ AI successfully demonstrates how AI can be used to simplify exam preparation by automating note analysis, PYQ analysis, and mock test generation.
-
-The project combines AI, OCR, and PDF processing into a practical productivity tool that helps students study smarter and save time.
+MVP Completed and Ready for Submission.
